@@ -16,6 +16,15 @@ query getUserById{
     email
   }
 }
+----------------------
+query getUserById($userid:ID!){
+  user(id:$userid){
+    id
+    firstName
+    lastName
+    email
+  }
+}
 -----------------------------
 query getAllQuotes{
   quotes{
@@ -26,6 +35,13 @@ query getAllQuotes{
 -----------------------------
 query getQuotebyUser{
   iquote(by:"4232"){
+    name
+    by
+  }
+}
+-----------------
+query getQuoteByUser($quoteby:ID!){
+  iquote(by:$quoteby){
     name
     by
   }
