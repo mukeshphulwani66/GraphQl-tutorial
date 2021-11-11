@@ -26,11 +26,10 @@ const resolvers = {
         users:()=>users,
         user:(_,{id})=>users.find(user=>user.id == id),
         quotes:()=>quotes,
-        iquote:(_,{by})=> quotes.filter((quote)=>quote.by==by)
-        
+        iquote:(_,{by})=> quotes.filter((quote)=>quote.by==by) 
       },
       User:{
-         quotes:(u)=> quotes.filter(quo=>quo.by == u.id)
+         quotes:(ur)=> quotes.filter(quote=>quote.by == ur.id)
       },
 }
 
