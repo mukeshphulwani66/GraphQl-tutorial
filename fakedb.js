@@ -33,6 +33,10 @@ export const quotes = [
         by:"23131"
     },
     {
+        name:"I am another quote",
+        by:"23131"
+    },
+    {
         name:"If it works dont touch it",
         by:"4232"
     },
