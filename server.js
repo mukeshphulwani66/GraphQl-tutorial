@@ -1,5 +1,6 @@
 import {ApolloServer,gql} from 'apollo-server'
 import {ApolloServerPluginLandingPageGraphQLPlayground} from 'apollo-server-core'
+import {users,quotes} from './fakedb'
 
 const typeDefs = gql`
     type Query{
