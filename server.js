@@ -1,38 +1,7 @@
-import {ApolloServer,gql} from 'apollo-server'
+import {ApolloServer} from 'apollo-server'
 import {ApolloServerPluginLandingPageGraphQLPlayground} from 'apollo-server-core'
-
-const typeDefs = gql`
-    type Query{
-        users:[User]
-        user(id:ID!): User
-        quotes:[Quote]
-        iquote(by:ID!):[Quote]
-    }
-    type User{
-        id:ID!
-        firstName:String
-        lastName:String
-        email:String
-        quotes:[Quote]
-    }
-    type Quote{
-        name:String
-        by:ID
-    }
-`;
-
-const resolvers = {
-    Query:{
-        users:()=>users,
-        user:(_,{id})=>users.find(user=>user.id == id),
-        quotes:()=>quotes,
-        iquote:(_,{by})=> quotes.filter((quote)=>quote.by==by) 
-      },
-      User:{
-         quotes:(ur)=> quotes.filter(quote=>quote.by == ur.id)
-      },
-}
-
+import typeDefs from './schemaGql.js'
+import resolvers from './resolvers.js'
 
 const server = new ApolloServer({ 
     typeDefs, 

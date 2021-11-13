@@ -46,3 +46,22 @@ query getQuoteByUser($quoteby:ID!){
     by
   }
 }
+-------
+mutation createUser($userNew:UserInput!){
+  user:signupUserDummy(userNew:$userNew){ 
+    id
+    email
+    firstName
+    lastName
+  }
+}
+
+{
+  "userNew": {
+    "firstName": "navin",
+    "lastName": "ssd",
+    "email": "sdsad@sd.com",
+    "password": "12345"
+  }
+}
+------
