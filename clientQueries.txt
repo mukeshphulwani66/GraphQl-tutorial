@@ -1,7 +1,7 @@
 ---------------------------
 query getAllUsers{
   users{
-    id
+    _id
     firstName
     lastName
     email
@@ -9,8 +9,8 @@ query getAllUsers{
 }
 ---------------------------
 query getUserById{
-  user(id:"23131"){
-    id
+  user(_id:"23131"){
+    _id
     firstName
     lastName
     email
@@ -18,8 +18,8 @@ query getUserById{
 }
 ----------------------
 query getUserById($userid:ID!){
-  user(id:$userid){
-    id
+  user(_id:$userid){
+    _id
     firstName
     lastName
     email
@@ -49,7 +49,7 @@ query getQuoteByUser($quoteby:ID!){
 -------
 mutation createUser($userNew:UserInput!){
   user:signupUserDummy(userNew:$userNew){ 
-    id
+    _id
     email
     firstName
     lastName
@@ -61,6 +61,38 @@ mutation createUser($userNew:UserInput!){
     "firstName": "navin",
     "lastName": "ssd",
     "email": "sdsad@sd.com",
+    "password": "12345"
+  }
+}
+------------
+mutation createUser($userNew:UserInput!){
+  user:signupUser(userNew:$userNew){ 
+    _id
+    email
+    firstName
+    lastName
+  }
+}
+
+{
+  "userNew": {
+    "firstName": "navin",
+    "lastName": "sharma",
+    "email": "navin@navin.com",
+    "password": "12345"
+  }
+}
+
+--------
+mutation SigninUser($userSignin:UserSigninInput!){
+  user:signinUser(userSignin:$userSignin){ 
+    token
+  }
+}
+
+{
+  "userSignin": {
+    "email": "navin@navin.com",
     "password": "12345"
   }
 }
