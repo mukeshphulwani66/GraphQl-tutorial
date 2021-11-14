@@ -97,3 +97,10 @@ mutation SigninUser($userSignin:UserSigninInput!){
   }
 }
 ------
+
+
+mutation createQuote{
+  quote:createQuote(name:"i am another nice quote")
+}
+
+--------
