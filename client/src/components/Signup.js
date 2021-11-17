@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import {Link} from 'react-router-dom'
 export default function Signup() {
     const [formData,setFormData] = useState({})
     
@@ -47,6 +47,7 @@ export default function Signup() {
                  onChange={handleChange}
                  required
                  />
+                  <Link to="/login"><p>Already have an account ?</p></Link> 
                  <button className="btn #673ab7 deep-purple" type="submit">Submit</button>
             </form>
         </div>
