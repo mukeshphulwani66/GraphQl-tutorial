@@ -13,7 +13,10 @@ import {
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  headers:{
+    authorization:localStorage.getItem("token") || ""
+  }
 });
 
 
