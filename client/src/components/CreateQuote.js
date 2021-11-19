@@ -7,8 +7,8 @@ export default function CreateQuote() {
     const [quote,setQuote] = useState("")
     const [createQuote,{loading,error,data}] = useMutation(CREATE_QUOTE,{
         refetchQueries:[
-            GET_ALL_QUOTES,
-            'getAllQuotes'
+            'getAllQuotes',
+            'getMyProfile'
         ]
     })
     
