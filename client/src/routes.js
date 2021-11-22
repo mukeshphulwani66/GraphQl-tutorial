@@ -10,5 +10,6 @@ export const routes = [
     {path:"/login",element:<Login />},
     {path:"/signup",element:<Signup />},
     {path:"/profile",element:<Profile />},
-    {path:"/profile/:userid",element:<OtherUserProfile/> }
+    {path:"/profile/:userid",element:<OtherUserProfile/> },
+    {path:"*",element:<NotFound /> }
 ]
