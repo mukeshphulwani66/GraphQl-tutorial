@@ -4,7 +4,10 @@ import { GET_MY_PROFILE } from '../gqloperations/queries';
 import {useNavigate} from 'react-router-dom'
 export default function Profile() {
     const navigate  = useNavigate()
-    const {loading,error,data} = useQuery(GET_MY_PROFILE)
+    const {loading,error,data} = useQuery(GET_MY_PROFILE,{
+        fetchPolicy:"cache-and-network"
+    })
+    
     if(!localStorage.getItem("token")){
             navigate("/login")
             return <h1>unauthorized</h1>
